@@ -1,24 +1,26 @@
 # PaperGate-IEEE
 
-**A zero-dependency LaTeX pre-submission auditor for IEEE-style research papers.**
+**Free LaTeX pre-submission risk scanner + optional reviewer-style manuscript audit.**
 
-PaperGate catches avoidable reviewer and submission risks *before* you upload a manuscript: broken labels, abstract problems, weak contribution positioning, missing experimental evidence, over-strong claims, and reliability/calibration gaps.
+PaperGate catches avoidable reviewer and submission risks *before* you upload a manuscript: broken labels, weak contribution positioning, missing experimental evidence, over-strong claims, and reliability/calibration gaps.
 
 > **Independent tool. Not affiliated with or endorsed by IEEE.** Always follow the exact, current author instructions of your target publication.
 
-## Why this exists
-
-A paper can be technically strong and still lose reviewer confidence because the contribution is hard to locate, the evidence chain is incomplete, references are broken, the abstract lacks quantitative outcomes, or reliability claims are made without calibration/selective-risk evidence.
-
-PaperGate turns those failure modes into a repeatable preflight check.
-
-## 30-second use
+## Try it in 30 seconds
 
 ```bash
-python paper_gate.py main.tex
+python paper_gate.py examples/risky_manuscript.tex
 ```
 
 No package installation. Python 3.9+ is enough.
+
+A deliberately weak sample manuscript scores **38/100 (HIGH RISK)** and triggers findings for broken references, missing calibration evidence, weak novelty positioning, missing ablations, selective-decision gaps, and over-strong claims. See `examples/risky_audit_report.txt`.
+
+For a healthier example:
+
+```bash
+python paper_gate.py examples/sample_manuscript.tex
+```
 
 Machine-readable output:
 
@@ -36,31 +38,26 @@ python paper_gate.py main.tex --json --out audit.json
 
 The output is a **0–100 risk-oriented score**, three gate scores, and actionable findings ranked `HIGH`, `MEDIUM`, and `LOW`.
 
-## Example
+## Why this exists
 
-```text
-PaperGate-IEEE — Pre-Submission Audit
-==========================================
-Score: 96/100   Verdict: READY
-Gates: submission_hygiene=100 | technical_story=100 | evidence=96
-Detected: 5 sections, 1 figures, 0 tables, 1 citations
+A paper can be technically strong and still lose reviewer confidence because the contribution is hard to locate, the evidence chain is incomplete, references are broken, the abstract lacks quantitative outcomes, or reliability claims are made without calibration/selective-risk evidence.
 
-[01] LOW    | reliability | ...
-```
+PaperGate turns those failure modes into a repeatable preflight check.
 
 ## Who it is for
 
 Researchers preparing IEEE-style journal or conference manuscripts, especially work involving industrial AI, edge intelligence, condition monitoring, uncertainty, reliability, or safety-sensitive decision making.
 
-## Free vs Pro
+## Need a human-level adversarial audit?
 
-**Free / open-source:** deterministic preflight checks in this repository.
+The free scanner is deterministic and intentionally conservative. For manuscript-level reasoning, launch pricing is:
 
-**Pro manuscript audit (launch offer: ¥99 / US$15):** adversarial reviewer-style audit of one manuscript, delivered as a prioritized issue ledger covering novelty positioning, method logic, experiment closure, claim-evidence consistency, industrial relevance, figure/table redundancy, and likely reviewer attacks. Payment will only be arranged after scope is agreed.
+- **Quick Risk Audit — ¥49 / US$7:** top 5 reviewer attack points, novelty/contribution check, missing evidence, and revise/submit recommendation.
+- **Full Reviewer Audit — ¥99 / US$15:** prioritized issue ledger covering novelty positioning, method logic, experiment closure, reliability/calibration, industrial relevance, figure/table effectiveness, and likely reviewer objections.
 
-### Request a Pro audit
+Open a GitHub issue with the **Pro manuscript audit request** form. Start with your target venue, title/anonymized title, and abstract or short summary. Do **not** upload a private manuscript publicly. Payment and private file exchange are arranged only after scope is agreed.
 
-Open a GitHub issue using the **Pro Audit Request** template. You do **not** need to upload private manuscript files publicly. Start with your title + abstract + target venue; private file transfer/payment can be arranged only after scope is agreed.
+Full scope: `PRO_AUDIT.md`.
 
 ## Privacy
 
@@ -70,7 +67,7 @@ For Pro requests, do not post unpublished manuscripts, confidential data, person
 
 ## Limits
 
-PaperGate is intentionally conservative and heuristic. It does not decide acceptance, verify scientific truth, replace human peer review, or guarantee compliance with a particular journal. Target-publication requirements change, so the publication's current author instructions remain authoritative.
+PaperGate is heuristic. It does not decide acceptance, verify scientific truth, replace human peer review, or guarantee compliance with a particular journal. Target-publication requirements change, so the publication's current author instructions remain authoritative.
 
 ## Roadmap
 
