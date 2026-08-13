@@ -1,0 +1,32 @@
+PaperGate-IEEE — Pre-Submission Audit
+==========================================
+Score: 38/100   Verdict: HIGH RISK
+Gates: submission_hygiene=88 | technical_story=86 | evidence=64
+
+Representative findings
+-----------------------
+HIGH   | submission  | Undefined referenced label: fig:model.
+       Fix: Repair the broken cross-reference and add the corresponding figure/label.
+
+HIGH   | reliability | Reliability/uncertainty is discussed without an obvious calibration metric.
+       Fix: Add calibration evidence such as ECE/Brier/NLL and preferably a reliability diagram.
+
+MEDIUM | novelty     | No explicit contribution statement detected.
+       Fix: State 2-4 precise algorithmic, system, and empirical contributions.
+
+MEDIUM | novelty     | Problem gap is weakly signposted.
+       Fix: Explain what existing methods fail to handle and the operational consequence.
+
+MEDIUM | evidence    | No obvious ablation/component analysis detected.
+       Fix: Isolate the effect of each proposed component.
+
+MEDIUM | reliability | No selective-decision/coverage evidence detected.
+       Fix: Report coverage versus risk/cost if decisions can defer, acquire, or abstain.
+
+MEDIUM | claims      | Potentially over-strong claim language detected.
+       Fix: Qualify claims to the tested setting and support them with adequate evidence.
+
+LOW    | evidence    | No explicit limitations/failure-case discussion detected.
+       Fix: State deployment boundaries and known failure modes.
+
+This file is an illustrative report for examples/risky_manuscript.tex. Exact output may evolve as PaperGate rules improve. PaperGate is heuristic, independent, and not affiliated with IEEE.
