@@ -1,8 +1,19 @@
 # PaperGate-IEEE Pro Audit
 
-## What you receive
+## Launch pricing
 
-A reviewer-style manuscript risk report focused on:
+**Quick Risk Audit — ¥49 / US$7**
+
+For authors who want the fastest pre-submission reality check. Includes:
+
+- top 5 reviewer attack points
+- contribution/novelty clarity check
+- top missing experiment or evidence gaps
+- concise go / revise-before-submit recommendation
+
+**Full Reviewer Audit — ¥99 / US$15**
+
+Includes a prioritized reviewer-style manuscript risk report focused on:
 
 1. Contribution clarity
 2. Novelty positioning against related work
@@ -22,6 +33,8 @@ A prioritized issue ledger:
 |---|---|---|---|
 | High | Acceptance risk | Manuscript section reference | Concrete revision |
 
+The audit is diagnostic and editorial. It does not guarantee acceptance and does not fabricate experiments, citations, or results.
+
 ## Suitable manuscripts
 
 - IEEE Transactions submissions
@@ -31,14 +44,14 @@ A prioritized issue ledger:
 - PHM
 - Robotics and intelligent systems
 
-## Scope request
+## How to request
 
-Before sharing unpublished material, provide:
+Open a **Pro Audit Request** issue and provide only non-sensitive scoping information:
 
 - Target venue
-- Title
-- Abstract
+- Title or anonymized title
+- Abstract / short summary
 - Research area
 - Desired review depth
 
-Private manuscript exchange and payment are arranged only after scope confirmation.
+Do not post unpublished manuscripts, confidential information, proprietary datasets, credentials, or other sensitive materials in a public issue. Private manuscript exchange and payment are arranged only after scope confirmation.
