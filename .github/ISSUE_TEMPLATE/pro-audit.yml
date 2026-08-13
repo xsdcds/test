@@ -1,0 +1,54 @@
+name: Pro manuscript audit request
+description: Request a paid reviewer-style manuscript audit. Do not upload private manuscripts here.
+title: "[Pro Audit] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for your interest in PaperGate-IEEE Pro. Start with non-sensitive information only. Do **not** upload unpublished manuscripts, confidential datasets, credentials, or proprietary material in this public issue.
+  - type: input
+    id: venue
+    attributes:
+      label: Target venue
+      description: Journal or conference name.
+      placeholder: e.g., IEEE Transactions on Industrial Informatics
+    validations:
+      required: true
+  - type: input
+    id: title
+    attributes:
+      label: Manuscript title
+      description: You may use a shortened or anonymized title if needed.
+    validations:
+      required: true
+  - type: textarea
+    id: abstract
+    attributes:
+      label: Abstract or short summary
+      description: Paste only material you are comfortable making public. A 3-5 sentence summary is enough for initial scoping.
+    validations:
+      required: true
+  - type: dropdown
+    id: need
+    attributes:
+      label: Primary need
+      options:
+        - Reviewer attack points / rejection risks
+        - Novelty and contribution positioning
+        - Experiment closure and ablations
+        - Industrial relevance and deployment story
+        - Reliability / calibration / selective decisions
+        - Full audit
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy confirmation
+      options:
+        - label: I have not posted confidential or proprietary material in this public issue.
+          required: true
+  - type: markdown
+    attributes:
+      value: |
+        Launch pricing is listed in `PRO_AUDIT.md`. Payment and private file exchange are arranged only after scope is agreed.
