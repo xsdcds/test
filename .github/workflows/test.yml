@@ -1,0 +1,25 @@
+name: PaperGate test
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  smoke-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run sample audit
+        run: |
+          python paper_gate.py examples/sample_manuscript.tex
+          python paper_gate.py examples/sample_manuscript.tex --json --out audit.json
+          python - <<'PY'
+          import json
+          r=json.load(open('audit.json',encoding='utf-8'))
+          assert 0 <= r['score'] <= 100
+          assert 'gates' in r and 'findings' in r
+          print('score=',r['score'],'verdict=',r['verdict'])
+          PY
